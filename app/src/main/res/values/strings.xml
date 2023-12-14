@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">QualityAir</string>
+    <string name="main_measure_particles">Air Particles</string>
+    <string name="main_measure_gas">Gas</string>
+    <string name="main_measure_humidity">Humidity</string>
+    <string name="desc_image_sensor_particles" tools:ignore="Typos">Air Particles</string>
+    <string name="desc_image_sensor_gas">Gas in the air</string>
+    <string name="desc_image_sensor_humidity">Air humidiy</string>
+<!--    <string name="desc_s1_im" tools:ignore="Typos">Sensor1IM</string>-->
+<!--    <string name="desc_s2_im">Sensor2IM</string>-->
+<!--    <string name="desc_s3_im">Sensor3IM</string>-->
+    <string name="particles_title">Particle Meter</string>
+    <string name="gas_title">Gas Meter (LPG)</string>
+    <string name="humidity_title">Humidity Meter</string>
+    <string name="blank_number" translatable="false">00</string>
+    <string name="button_measure">Measure</string>
+    <string name="meter_background">Meter background</string>
+</resources>

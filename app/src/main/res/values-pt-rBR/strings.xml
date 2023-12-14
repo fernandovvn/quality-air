@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_measure_particles">Partículas no ar</string>
+    <string name="main_measure_gas">Gás</string>
+    <string name="main_measure_humidity">Umidade</string>
+    <string name="desc_image_sensor_particles">Partículas no ar</string>
+    <string name="desc_image_sensor_gas">Gás no ar</string>
+    <string name="desc_image_sensor_humidity">Umidade do ar</string>
+    <string name="particles_title">Medidor de Particulas</string>
+    <string name="gas_title">Medidor de Gás (GLP)</string>
+    <string name="humidity_title">Medidor de Umidade</string>
+    <string name="button_measure">Medir</string>
+    <string name="meter_background">Fundo do medidor</string>
+</resources>

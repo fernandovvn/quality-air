@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    <solid android:color="@color/purple_1" /> <!-- Fill color for the rectangle, change as needed -->
+    <corners android:radius="10dp" /> <!-- Radius determines the roundness of the corners, change as needed -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/black" /> <!-- Border color, change as needed -->
+</shape>
