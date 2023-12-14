@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/ring_m" />
 
     <TextView
-        android:id="@+id/textview_valor_s1"
+        android:id="@+id/sensor_particles_tv_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/blank_number"

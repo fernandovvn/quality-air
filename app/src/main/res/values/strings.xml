@@ -15,4 +15,11 @@
     <string name="blank_number" translatable="false">00</string>
     <string name="button_measure">Measure</string>
     <string name="meter_background">Meter background</string>
+    <string name="btn_measure_25">Measure 2.5</string>
+    <string name="btn_measure_10">Measure 10</string>
+    <string name="mp_1">L1 - Good (0 - 40)</string>
+    <string name="mp_2">L2 - Moderate (41 - 80): People with respiratory illnesses may experience symptoms such as a dry cough and tiredness.</string>
+    <string name="mp_3">L3 - Bad (81 - 120): People with respiratory or heart diseases, the elderly and children have worsened symptoms. The general population may experience symptoms such as burning eyes, nose and throat, dry cough and tiredness.</string>
+    <string name="mp_4">L4 - Very Bad (121 - 200): Increased symptoms in children and people with lung and cardiovascular diseases. Increase in respiratory symptoms in the general population.</string>
+    <string name="mp_5">L5 - Terrible (>200): Worsening of respiratory symptoms. Worsening of lung diseases, such as asthma, and cardiovascular diseases, such as myocardial infarction.</string>
 </resources>

@@ -27,7 +27,7 @@ public class ActivitySensorGas extends AppCompatActivity {
     }
 
     public void mostraVal2(View v){
-        TextView myTextView = findViewById(R.id.textview_valor_s1);
+        TextView myTextView = findViewById(R.id.sensor_particles_tv_val);
         int val = gerarNumeroAleatorio();
         myTextView.setText(String.valueOf(val));
     }

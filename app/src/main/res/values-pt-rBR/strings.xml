@@ -11,4 +11,11 @@
     <string name="humidity_title">Medidor de Umidade</string>
     <string name="button_measure">Medir</string>
     <string name="meter_background">Fundo do medidor</string>
+    <string name="btn_measure_25">Medir 2.5</string>
+    <string name="btn_measure_10">Medir 10</string>
+    <string name="mp_1">N1 - Boa (0 - 40)</string>
+    <string name="mp_2">N2 - Moderada (41 - 80): Pessoas com doenças respiratórias podem apresentar sintomas como tosse seca e cansaço.</string>
+    <string name="mp_3">N3 - Ruim (81 - 120): Pessoas com doenças respiratórias ou cardíacas, idosos e crianças têm os sintomas agravados. População em geral pode apresentar sintomas como ardor nos olhos, nariz e garganta, tosse seca e cansaço.</string>
+    <string name="mp_4">N4 -Muito Ruim (121 - 200): Aumento dos sintomas em crianças e pessoas com doenças pulmonares e cardiovasculares. Aumento de sintomas respiratórios na população em geral.</string>
+    <string name="mp_5">N5 - Péssimo (>200): Agravamento dos sintomas respiratórios. Agravamento de doenças pulmonares, como asma, e cardiovasculares, como infarto do miocárdio.</string>
 </resources>
