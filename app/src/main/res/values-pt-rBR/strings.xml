@@ -35,4 +35,8 @@
     <string name="humidity_desc_good">Geralmente considerado um nível de umidade confortável. Oferece conforto respiratório e para a pele. Reduz a eletricidade estática.</string>
     <string name="humidity_desc_moderate">Gama considerada aceitável, mas pode ser um pouco úmida. Pode ser propício para o crescimento de mofo e ácaros se não houver ventilação adequada.</string>
     <string name="humidity_desc_very_bad">Ambiente úmido, podendo ser desconfortável. Aumenta o risco de crescimento de mofo e bactérias. Pode causar desconforto respiratório.</string>
+    <string name="settings_button">Botão de configurações</string>
+    <string name="settings">Configurações</string>
+    <string name="language">Idioma:</string>
+    <string name="brazilian_flag">Bandeira do Brasil</string>
 </resources>

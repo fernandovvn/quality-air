@@ -6,23 +6,20 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button btnParticle, btnGas, btnHumidity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnParticle = findViewById(R.id.main_btn_particles);
-        btnGas = findViewById(R.id.main_btn_gas);
-        btnHumidity = findViewById(R.id.main_btn_humidity);
 
         //OnCLick Listeners (Buttons)
-        btnParticle.setOnClickListener(this::onClickBtnParticles);
-        btnGas.setOnClickListener(this::onClickBtnGas);
-        btnHumidity.setOnClickListener(this::onClickBtnHumidity);
+        findViewById(R.id.main_btn_particles).setOnClickListener(this::onClickBtnParticles);
+        findViewById(R.id.main_btn_gas).setOnClickListener(this::onClickBtnGas);
+        findViewById(R.id.main_btn_humidity).setOnClickListener(this::onClickBtnHumidity);
+        findViewById(R.id.main_btn_settings).setOnClickListener(this::onClickSettings);
     }
 
     public void onClickBtnParticles(View v){
@@ -37,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBtnHumidity(View v){
         Intent intent = new Intent(this, ActivitySensorHumidity.class);
+        startActivity(intent);
+    }
+
+    public void onClickSettings(View v){
+        Intent intent = new Intent(this, ActivitySettings.class);
         startActivity(intent);
     }
 }
