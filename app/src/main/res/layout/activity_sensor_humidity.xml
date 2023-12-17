@@ -4,60 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".ActivitySensorHumidity">
 
-    <ImageView
-        android:id="@+id/ring_s"
-        android:layout_width="235dp"
-        android:layout_height="241dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="@+id/title_s3"
-        app:layout_constraintStart_toStartOf="@+id/title_s3"
-        app:layout_constraintTop_toBottomOf="@+id/title_s3"
-        app:srcCompat="@drawable/ring_m" />
-
     <TextView
-        android:id="@+id/textview_valor_s3"
+        android:id="@+id/sensor_humidity_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/blank_number"
-        android:textSize="96sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ring_s"
-        app:layout_constraintEnd_toEndOf="@+id/ring_s"
-        app:layout_constraintStart_toStartOf="@+id/ring_s"
-        app:layout_constraintTop_toTopOf="@+id/ring_s" />
-
-    <Button
-        android:id="@+id/medir_s"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:onClick="mostraVal3"
-        android:text="@string/button_measure"
-        app:layout_constraintEnd_toEndOf="@+id/ring_s"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/ring_s"
-        app:layout_constraintTop_toBottomOf="@+id/ring_s" />
-
-    <TextView
-        android:id="@+id/descr_val_s"
-        android:layout_width="358dp"
-        android:layout_height="197dp"
-        android:layout_marginTop="44dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/medir_s"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/medir_s"
-        app:layout_constraintTop_toBottomOf="@+id/medir_s" />
-
-    <TextView
-        android:id="@+id/title_s3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:text="@string/humidity_title"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sensor_humidity_img_ring"
+        android:layout_width="235dp"
+        android:layout_height="235dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/meter_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_humidity_tv_title"
+        app:srcCompat="@drawable/ring_m" />
+
+    <TextView
+        android:id="@+id/sensor_humidity_tv_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blank_number"
+        android:textSize="96sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_humidity_img_ring"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_humidity_img_ring"
+        app:layout_constraintStart_toStartOf="@+id/sensor_humidity_img_ring"
+        app:layout_constraintTop_toTopOf="@+id/sensor_humidity_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_humidity_tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity_unit"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_humidity_tv_val"
+        app:layout_constraintStart_toStartOf="@+id/sensor_humidity_tv_val"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_humidity_tv_val" />
+
+    <TextView
+        android:id="@+id/sensor_humidity_tv_quality_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/quality"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sensor_humidity_btn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_humidity_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_humidity_tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/mp_quality_blank"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_humidity_tv_quality_label"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/sensor_humidity_tv_quality_label"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <Button
+        android:id="@+id/sensor_humidity_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/btn_measure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_humidity_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_humidity_tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_humidity_btn" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

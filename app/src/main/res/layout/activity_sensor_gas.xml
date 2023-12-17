@@ -4,66 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".ActivitySensorGas">
 
     <TextView
-        android:id="@+id/descr_val_s2"
-        android:layout_width="343dp"
-        android:layout_height="209dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="48dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <Button
-        android:id="@+id/medir_s2"
+        android:id="@+id/sensor_gas_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:onClick="mostraVal2"
-        android:text="@string/button_measure"
-        app:layout_constraintEnd_toEndOf="@+id/ring_s2"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/ring_s2"
-        app:layout_constraintTop_toBottomOf="@+id/ring_s2" />
-
-    <ImageView
-        android:id="@+id/ring_s2"
-        android:layout_width="235dp"
-        android:layout_height="241dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/title_s2"
-        app:layout_constraintStart_toStartOf="@+id/title_s2"
-        app:layout_constraintTop_toBottomOf="@+id/title_s2"
-        app:srcCompat="@drawable/ring_m" />
-
-    <TextView
-        android:id="@+id/sensor_particles_tv_val"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/blank_number"
-        android:textSize="96sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ring_s2"
-        app:layout_constraintEnd_toEndOf="@+id/ring_s2"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/ring_s2"
-        app:layout_constraintTop_toTopOf="@+id/ring_s2" />
-
-    <TextView
-        android:id="@+id/title_s2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:text="@string/gas_title"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sensor_gas_img_ring"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/meter_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_gas_tv_title"
+        app:srcCompat="@drawable/ring_m" />
+
+    <TextView
+        android:id="@+id/sensor_gas_tv_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blank_number"
+        android:textSize="96sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_gas_img_ring"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_gas_img_ring"
+        app:layout_constraintStart_toStartOf="@+id/sensor_gas_img_ring"
+        app:layout_constraintTop_toTopOf="@+id/sensor_gas_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_gas_tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gas_unit"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_gas_tv_val"
+        app:layout_constraintStart_toStartOf="@+id/sensor_gas_tv_val"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_gas_tv_val" />
+
+    <TextView
+        android:id="@+id/sensor_gas_tv_quality_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/quality"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sensor_gas_btn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_gas_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_gas_tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/mp_quality_blank"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_gas_tv_quality_label"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/sensor_gas_tv_quality_label"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <Button
+        android:id="@+id/sensor_gas_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/btn_measure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_gas_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_gas_tv_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_gas_btn" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

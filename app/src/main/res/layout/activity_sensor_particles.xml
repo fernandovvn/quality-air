@@ -8,7 +8,7 @@
     tools:context=".ActivitySensorParticles">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sensor_particles_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -19,14 +19,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ring_s1"
+        android:id="@+id/sensor_particles_img_ring"
         android:layout_width="235dp"
         android:layout_height="235dp"
         android:layout_marginTop="40dp"
         android:contentDescription="@string/meter_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_particles_tv_title"
         app:srcCompat="@drawable/ring_m" />
 
     <TextView
@@ -35,10 +35,43 @@
         android:layout_height="wrap_content"
         android:text="@string/blank_number"
         android:textSize="96sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ring_s1"
-        app:layout_constraintEnd_toEndOf="@+id/ring_s1"
-        app:layout_constraintStart_toStartOf="@+id/ring_s1"
-        app:layout_constraintTop_toTopOf="@+id/ring_s1" />
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_particles_img_ring"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_particles_img_ring"
+        app:layout_constraintStart_toStartOf="@+id/sensor_particles_img_ring"
+        app:layout_constraintTop_toTopOf="@+id/sensor_particles_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_particles_tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mp_unit"
+        app:layout_constraintEnd_toEndOf="@+id/sensor_particles_tv_val"
+        app:layout_constraintStart_toStartOf="@+id/sensor_particles_tv_val"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_particles_tv_val" />
+
+    <TextView
+        android:id="@+id/sensor_particles_tv_quality_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="@string/quality"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sensor_particles_btn_25"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/sensor_particles_img_ring" />
+
+    <TextView
+        android:id="@+id/sensor_particles_tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/mp_quality_blank"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sensor_particles_tv_quality_label"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/sensor_particles_tv_quality_label"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -51,11 +84,11 @@
         android:id="@+id/sensor_particles_btn_25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:text="@string/btn_measure_25"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/ring_s1" />
+        app:layout_constraintTop_toBottomOf="@+id/sensor_particles_img_ring" />
 
     <Button
         android:id="@+id/sensor_particles_btn_10"
@@ -73,10 +106,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sensor_particles_btn_25" />

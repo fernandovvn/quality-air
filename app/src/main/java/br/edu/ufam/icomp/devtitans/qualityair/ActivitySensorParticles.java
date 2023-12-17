@@ -4,71 +4,75 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Random;
+import br.edu.ufam.icomp.devtitans.qualityair.utils.Algorithm;
 
 public class ActivitySensorParticles extends AppCompatActivity {
 
-    private Button btn25, btn10;
-    private TextView tvDesc;
+    // Views
+    private TextView tvVal, tvStatus, tvDesc;
+    private ImageView imgRing;
+
+    // Auxiliar
+    private enum MpType {
+        MP_2_5,
+        MP_10
+    };
+    private final int[] mp10vals = {50, 100, 150, 250}, mp25vals = {25, 50, 75, 125};
+    private final int[] ringIds = {
+            R.drawable.ring_g, R.drawable.ring_y,
+            R.drawable.ring_o, R.drawable.ring_r,
+            R.drawable.ring_p
+    };
+    private final int[] mpStatusIds = {
+            R.string.status_good, R.string.status_moderate,
+            R.string.status_bad, R.string.status_very_bad,
+            R.string.status_terrible
+    };
+    private final int[] mpDescriptionIds = {
+            R.string.mp_description_1,R.string.mp_description_2,
+            R.string.mp_description_3, R.string.mp_description_4,
+            R.string.mp_description_5
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensor_particles);
-        btn25  = findViewById(R.id.sensor_particles_btn_25);
-        btn10  = findViewById(R.id.sensor_particles_btn_10);
+        tvVal = findViewById(R.id.sensor_gas_tv_val);
+        imgRing = findViewById(R.id.sensor_particles_img_ring);
+        tvStatus = findViewById(R.id.sensor_particles_tv_status);
         tvDesc = findViewById(R.id.sensor_particles_tv_desc);
 
-        btn25.setOnClickListener(this::run25);
-        btn10.setOnClickListener(this::run10);
-    }
-
-    public static int randomRange(int mi, int mx) {
-        Random random = new Random();
-        return mi + random.nextInt(mx-mi);
+        findViewById(R.id.sensor_particles_btn_25).setOnClickListener(this::run25);
+        findViewById(R.id.sensor_particles_btn_10).setOnClickListener(this::run10);
     }
 
     public void run25(View v){
         TextView myTextView = findViewById(R.id.sensor_particles_tv_val);
-        int val = randomRange(0,250);
+        int val = Algorithm.randomRange(0,300);
         myTextView.setText(String.valueOf(val));
-        updateDescription(true, val);
+        updateStatus(MpType.MP_2_5, val);
     }
 
     public void run10(View v){
-        TextView myTextView = findViewById(R.id.sensor_particles_tv_val);
-        int val = randomRange(0,250);
-        myTextView.setText(String.valueOf(val));
-        updateDescription(false, val);
+        int val = Algorithm.randomRange(0,300);
+        tvVal.setText(String.valueOf(val));
+        updateStatus(MpType.MP_10, val);
     }
 
-    private void updateDescription(boolean is25, int val){
-        String text;
-        if(is25) { //2.5 measurement
-            text = val<=25
-                    ? getResources().getString(R.string.mp_1)
-                    : val<=50
-                    ? getResources().getString(R.string.mp_2)
-                    : val<=75
-                    ? getResources().getString(R.string.mp_3)
-                    : val<=125
-                    ? getResources().getString(R.string.mp_4)
-                    : getResources().getString(R.string.mp_5);
-        }
-        else{ //10 measurement
-            text = val<=50
-                    ? getResources().getString(R.string.mp_1)
-                    : val<=100
-                    ? getResources().getString(R.string.mp_2)
-                    : val<=150
-                    ? getResources().getString(R.string.mp_3)
-                    : val<=250
-                    ? getResources().getString(R.string.mp_4)
-                    : getResources().getString(R.string.mp_5);
-        }
-        tvDesc.setText(text);
+    private void updateStatus(MpType tp, int val){
+        int i = Algorithm.lower_bound(tp == MpType.MP_10 ? mp10vals : mp25vals, val);
+        setStatus(i);
+    }
+
+    private void setStatus(int i){
+        String status=getResources().getString(mpStatusIds[i]);
+        String desc=getResources().getString(mpDescriptionIds[i]);
+        tvStatus.setText(status);
+        tvDesc.setText(desc);
+        imgRing.setImageResource(ringIds[i]);
     }
 }

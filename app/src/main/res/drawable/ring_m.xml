@@ -3,7 +3,7 @@
     <!-- Outer Circle -->
     <item>
         <shape android:shape="oval">
-            <solid android:color="@color/red" /> <!-- Change this color as needed -->
+            <solid android:color="@color/gray" /> <!-- Change this color as needed -->
         </shape>
     </item>
 

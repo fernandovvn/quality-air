@@ -4,5 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
     <color name="red_1">#FF3333</color>
+    <color name="orange">#ff751a</color>
+    <color name="green">#99ff66</color>
+    <color name="gray">#c2c2c2</color>
+    <color name="yellow">#ffff66</color>
+    <color name="purple">#990099</color>
     <color name="purple_1">#7733FF</color>
 </resources>

@@ -12,14 +12,35 @@
     <string name="particles_title">Particle Meter</string>
     <string name="gas_title">Gas Meter (LPG)</string>
     <string name="humidity_title">Humidity Meter</string>
-    <string name="blank_number" translatable="false">00</string>
+    <string name="blank_number" translatable="false">0</string>
     <string name="button_measure">Measure</string>
     <string name="meter_background">Meter background</string>
     <string name="btn_measure_25">Measure 2.5</string>
     <string name="btn_measure_10">Measure 10</string>
-    <string name="mp_1">L1 - Good (0 - 40)</string>
-    <string name="mp_2">L2 - Moderate (41 - 80): People with respiratory illnesses may experience symptoms such as a dry cough and tiredness.</string>
-    <string name="mp_3">L3 - Bad (81 - 120): People with respiratory or heart diseases, the elderly and children have worsened symptoms. The general population may experience symptoms such as burning eyes, nose and throat, dry cough and tiredness.</string>
-    <string name="mp_4">L4 - Very Bad (121 - 200): Increased symptoms in children and people with lung and cardiovascular diseases. Increase in respiratory symptoms in the general population.</string>
-    <string name="mp_5">L5 - Terrible (>200): Worsening of respiratory symptoms. Worsening of lung diseases, such as asthma, and cardiovascular diseases, such as myocardial infarction.</string>
+    <string name="mp_description_1">Ideal Quality.</string>
+    <string name="mp_description_2">People with respiratory illnesses may experience symptoms such as a dry cough and tiredness.</string>
+    <string name="mp_description_3">People with respiratory or heart diseases, the elderly and children have worsened symptoms. The general population may experience symptoms such as burning eyes, nose and throat, dry cough and tiredness.</string>
+    <string name="mp_description_4">Increased symptoms in children and people with lung and cardiovascular diseases. Increase in respiratory symptoms in the general population.</string>
+    <string name="mp_description_5">Worsening of respiratory symptoms. Worsening of lung diseases, such as asthma, and cardiovascular diseases, such as myocardial infarction.</string>
+    <string name="mp_unit" translatable="false">µg/m³</string>
+    <string name="quality">Quality:</string>
+    <string name="mp_quality_blank" translatable="false">--</string>
+    <string name="status_good">Good</string>
+    <string name="status_moderate">Moderate</string>
+    <string name="status_bad">Bad</string>
+    <string name="status_very_bad">Very Bad</string>
+    <string name="status_terrible">Terrible</string>
+    <string name="btn_measure">Measure</string>
+    <string name="gas_unit" translatable="false">ppm</string>
+    <string name="gas_status_low">Low Risk</string>
+    <string name="gas_status_moderate">Moderate Risk</string>
+    <string name="gas_status_high">High Risk</string>
+    <string name="gas_desc_low">Levels in this range may indicate the presence of gases, but are generally considered relatively safe.</string>
+    <string name="gas_desc_moderate">Concentrations in this range may indicate a more significant presence of flammable gases. It is advisable to monitor closely and consider corrective actions.</string>
+    <string name="gas_desc_high">Levels in this range can pose a substantial risk. There may be a danger of flammability, and immediate safety measures such as ventilation, evacuation and calling professionals are appropriate.</string>
+    <string name="humidity_desc_bad">Characterized by a dry environment. It can lead to discomfort in the respiratory tract and dry skin. Static electricity is more prevalent.</string>
+    <string name="humidity_desc_good">Generally considered a comfortable humidity level. Provides respiratory and skin comfort. Reduces static electricity.</string>
+    <string name="humidity_desc_moderate">Range considered acceptable, but may be a little damp. It can be conducive to the growth of mold and dust mites if there is not adequate ventilation.</string>
+    <string name="humidity_desc_very_bad">Humid environment, which can be uncomfortable. Increases the risk of mold and bacteria growth. May cause respiratory discomfort.</string>
+    <string name="humidity_unit" translatable="false">%</string>
 </resources>
