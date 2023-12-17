@@ -41,7 +41,7 @@ public class ActivitySensorParticles extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sensor_particles);
-        tvVal = findViewById(R.id.sensor_gas_tv_val);
+        tvVal = findViewById(R.id.sensor_particles_tv_val);
         imgRing = findViewById(R.id.sensor_particles_img_ring);
         tvStatus = findViewById(R.id.sensor_particles_tv_status);
         tvDesc = findViewById(R.id.sensor_particles_tv_desc);
@@ -51,9 +51,8 @@ public class ActivitySensorParticles extends AppCompatActivity {
     }
 
     public void run25(View v){
-        TextView myTextView = findViewById(R.id.sensor_particles_tv_val);
         int val = Algorithm.randomRange(0,300);
-        myTextView.setText(String.valueOf(val));
+        tvVal.setText(String.valueOf(val));
         updateStatus(MpType.MP_2_5, val);
     }
 
