@@ -38,5 +38,7 @@
     <string name="settings_button">Botão de configurações</string>
     <string name="settings">Configurações</string>
     <string name="language">Idioma:</string>
-    <string name="brazilian_flag">Bandeira do Brasil</string>
+    <string name="flag_br">Bandeira do Brasil</string>
+    <string name="automatic">Automático</string>
+    <string name="flag_uk">Bandeira do Reino Unido</string>
 </resources>

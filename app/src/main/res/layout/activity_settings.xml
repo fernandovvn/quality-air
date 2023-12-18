@@ -17,18 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/settings_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:orientation="horizontal"
-        app:divider="@drawable/empty_divider"
-        app:showDividers="middle"
-        android:gravity="center_vertical">
 
     <TextView
         android:id="@+id/settings_tv_languages"
@@ -36,13 +24,27 @@
         android:textSize="20sp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_marginRight="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/settings_guideline" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        app:divider="@drawable/empty_divider"
+        app:showDividers="middle"
+        app:layout_constraintStart_toEndOf="@id/settings_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
         <ImageButton
             android:id="@+id/settings_btn_en"
-            android:contentDescription="@string/brazilian_flag"
+            android:contentDescription="@string/flag_uk"
             android:padding="0dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -52,7 +54,7 @@
 
         <ImageButton
             android:id="@+id/settings_btn_pt_br"
-            android:contentDescription="@string/brazilian_flag"
+            android:contentDescription="@string/flag_br"
             android:padding="0dp"
             android:layout_height="80dp"
             android:layout_width="80dp"
@@ -60,5 +62,12 @@
             android:background="@null"
             app:srcCompat="@drawable/ic_flag_brazil"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/settings_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".33" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
