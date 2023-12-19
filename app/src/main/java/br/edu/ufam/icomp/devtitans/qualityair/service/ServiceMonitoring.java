@@ -78,11 +78,11 @@ public class ServiceMonitoring extends Service implements SensorEventListener{
                 data.saveReading(new SensorReading(SensorType.PM_25, pm25, System.currentTimeMillis()));
 
                 //PM10
-                if(pm10>150) notificationFactory.showAlert(SensorType.PM_10);
+                if(pm10>150*100) notificationFactory.showAlert(SensorType.PM_10);
                 else notificationFactory.cancelAlert(SensorType.PM_10);
 
                 //PM25
-                if(pm25>150) notificationFactory.showAlert(SensorType.PM_25);
+                if(pm25>150*100) notificationFactory.showAlert(SensorType.PM_25);
                 else notificationFactory.cancelAlert(SensorType.PM_25);
 
                 break;
@@ -98,15 +98,15 @@ public class ServiceMonitoring extends Service implements SensorEventListener{
                 data.saveReading(new SensorReading(SensorType.GAS_SMOKE, smoke, System.currentTimeMillis()));
 
                 //LPG
-                if(lpg>700) notificationFactory.showAlert(SensorType.GAS_LPG);
+                if(lpg>700*1000) notificationFactory.showAlert(SensorType.GAS_LPG);
                 else notificationFactory.cancelAlert(SensorType.GAS_LPG);
 
                 //CO
-                if(co>200) notificationFactory.showAlert(SensorType.PM_25);
-                else notificationFactory.cancelAlert(SensorType.PM_25);
+                if(co>200*1000) notificationFactory.showAlert(SensorType.GAS_CO);
+                else notificationFactory.cancelAlert(SensorType.GAS_CO);
 
                 //SMOKE
-                if(smoke>200) notificationFactory.showAlert(SensorType.GAS_SMOKE);
+                if(smoke>200*1000) notificationFactory.showAlert(SensorType.GAS_SMOKE);
                 else notificationFactory.cancelAlert(SensorType.GAS_SMOKE);
 
                 break;
@@ -120,11 +120,11 @@ public class ServiceMonitoring extends Service implements SensorEventListener{
                 data.saveReading(new SensorReading(SensorType.DHT_HUM, humidity, System.currentTimeMillis()));
 
                 //LPG
-                if(tmp>38) notificationFactory.showAlert(SensorType.DHT_TMP);
+                if(tmp>38*100) notificationFactory.showAlert(SensorType.DHT_TMP);
                 else notificationFactory.cancelAlert(SensorType.DHT_TMP);
 
                 //HUMIDITY
-                if(tmp>38) notificationFactory.showAlert(SensorType.DHT_HUM);
+                if(humidity>60*100) notificationFactory.showAlert(SensorType.DHT_HUM);
                 else notificationFactory.cancelAlert(SensorType.DHT_HUM);
 
                 break;

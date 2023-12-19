@@ -50,7 +50,7 @@
     <string name="sensor_dht_humidity_desc">Sensor de Humidade</string>
     <string name="sensor_pm10_name">Párticula de Matéria 10</string>
     <string name="sensor_pm25_name">Partícula de Matéria 2.5</string>
-    <string name="sensor_gas_lpg_name">Gás LPG</string>
+    <string name="sensor_gas_lpg_name">Gás GLP</string>
     <string name="sensor_gas_co_name">Gás CO</string>
     <string name="sensor_gas_smoke_name">Gás Fumaça</string>
     <string name="sensor_dht_tmp_name">DHT Temperatura</string>
