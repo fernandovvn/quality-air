@@ -7,7 +7,6 @@ import android.content.Intent;
 public class MyBroadcastReceiver extends BroadcastReceiver {
 
     private final BroadcastListener listener;
-
     public MyBroadcastReceiver(BroadcastListener listener){
         this.listener = listener;
     }

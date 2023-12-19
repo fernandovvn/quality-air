@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivitySensorGas">
+    tools:context=".ActivityAnalyze"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        tools:context=".ActivitySensorGas">
+        tools:context=".ActivityAnalyze">
 
         <TextView
             android:id="@+id/sensor_gas_tv_title"

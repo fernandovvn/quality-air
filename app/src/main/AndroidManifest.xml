@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -17,16 +17,13 @@
         android:theme="@style/Theme.QualityAir"
         tools:targetApi="31">
         <activity
+            android:name=".ActivitySensors"
+            android:exported="false" />
+        <activity
             android:name=".ActivitySettings"
             android:exported="false" />
         <activity
-            android:name=".ActivitySensorHumidity"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitySensorGas"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitySensorParticles"
+            android:name=".ActivityAnalyze"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -38,7 +35,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".broadcast.BroadcastStartService" android:exported="true">
+        <receiver
+            android:name=".broadcast.BroadcastStartService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -46,9 +45,8 @@
 
         <service
             android:name=".service.ServiceMonitoring"
-            android:foregroundServiceType="health"
-            android:exported="true">
-        </service>
+            android:exported="true"
+            android:foregroundServiceType="health"></service>
     </application>
 
 </manifest>

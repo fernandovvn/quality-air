@@ -41,4 +41,19 @@
     <string name="flag_br">Bandeira do Brasil</string>
     <string name="automatic">Automático</string>
     <string name="flag_uk">Bandeira do Reino Unido</string>
+    <string name="sensor_pm10_desc">Sensor Partícula de Matéria 10 µg/m³</string>
+    <string name="sensor_pm25_desc">Sensor Partícula de Matéria 2.5 µg/m³</string>
+    <string name="sensor_gas_lpg_desc">Sensor de Gás GLP</string>
+    <string name="sensor_gas_co_desc">Sensor de Gás CO</string>
+    <string name="sensor_gas_smoke_desc">Sensor de Gás Fumaça</string>
+    <string name="sensor_dht_tmp_desc">Sensor de Temperatura</string>
+    <string name="sensor_dht_humidity_desc">Sensor de Humidade</string>
+    <string name="sensor_pm10_name">Párticula de Matéria 10</string>
+    <string name="sensor_pm25_name">Partícula de Matéria 2.5</string>
+    <string name="sensor_gas_lpg_name">Gás LPG</string>
+    <string name="sensor_gas_co_name">Gás CO</string>
+    <string name="sensor_gas_smoke_name">Gás Fumaça</string>
+    <string name="sensor_dht_tmp_name">DHT Temperatura</string>
+    <string name="sensor_dht_humidity_name">DHT Umidade</string>
+    <string name="measures">Medições</string>
 </resources>

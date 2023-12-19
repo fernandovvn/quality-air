@@ -14,51 +14,48 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.edu.ufam.icomp.devtitans.qualityair.broadcast.BroadcastListener;
-import br.edu.ufam.icomp.devtitans.qualityair.service.ServiceBroadcastAction;
 import br.edu.ufam.icomp.devtitans.qualityair.broadcast.MyBroadcastReceiver;
+import br.edu.ufam.icomp.devtitans.qualityair.service.ServiceBroadcastAction;
 import br.edu.ufam.icomp.devtitans.qualityair.utils.Algorithm;
 import br.edu.ufam.icomp.devtitans.qualityair.utils.Sensors;
 
-public class ActivitySensorHumidity extends AppCompatActivity implements BroadcastListener {
+public class ActivityAnalyze extends AppCompatActivity implements BroadcastListener {
     //View
     private TextView tvVal, tvStatus, tvDesc;
     private ImageView imgRing;
 
     // Broadcast
-    private boolean automatic = false;
-    private BroadcastReceiver receiver = null;
+    private boolean automatic;
+    private BroadcastReceiver receiver;
 
     // Auxiliar
-    private final int[] humidityVals = {30, 50, 70};
+    private final int[] gasVals = {700, 1000};
     private final int[] ringIds = {
-            R.drawable.ring_r, R.drawable.ring_g,
-            R.drawable.ring_y, R.drawable.ring_p
+            R.drawable.ring_g, R.drawable.ring_o, R.drawable.ring_r,
     };
-    private final int[] humidityStatusIds = {
-            R.string.status_bad,
-            R.string.status_good,
-            R.string.status_moderate,
-            R.string.status_very_bad
+    private final int[] gasStatusIds = {
+            R.string.gas_status_low,
+            R.string.gas_status_moderate,
+            R.string.gas_status_high
     };
-    private final int[] humidityDescIds = {
-            R.string.humidity_desc_bad,
-            R.string.humidity_desc_good,
-            R.string.humidity_desc_moderate,
-            R.string.humidity_desc_very_bad
+    private final int[] gasDescIds = {
+        R.string.gas_desc_low,
+        R.string.gas_desc_moderate,
+        R.string.gas_desc_high
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensor_humidity);
-        tvVal = findViewById(R.id.sensor_humidity_tv_val);
-        imgRing = findViewById(R.id.sensor_humidity_img_ring);
-        tvStatus = findViewById(R.id.sensor_humidity_tv_status);
-        tvDesc = findViewById(R.id.sensor_humidity_tv_desc);
-        automatic = ((CheckBox)findViewById(R.id.sensor_humidity_cb_automatic)).isChecked();
+        setContentView(R.layout.activity_sensor_gas);
+        tvVal = findViewById(R.id.sensor_gas_tv_val);
+        imgRing = findViewById(R.id.sensor_gas_img_ring);
+        tvStatus = findViewById(R.id.sensor_gas_tv_status);
+        tvDesc = findViewById(R.id.sensor_gas_tv_desc);
+        automatic = ((CheckBox)findViewById(R.id.sensor_gas_cb_automatic)).isChecked();
 
-        findViewById(R.id.sensor_humidity_btn).setOnClickListener(this::onClickBtnMeasure);
-        findViewById(R.id.sensor_humidity_cb_automatic).setOnClickListener(this::onClickCheckboxAutomatic);
+        findViewById(R.id.sensor_gas_btn).setOnClickListener(this::onClickBtnMeasure);
+        findViewById(R.id.sensor_gas_cb_automatic).setOnClickListener(this::onClickCheckboxAutomatic);
 
         if(automatic) measure();
     }
@@ -68,7 +65,7 @@ public class ActivitySensorHumidity extends AppCompatActivity implements Broadca
         receiver = new MyBroadcastReceiver(this);
         ContextCompat.registerReceiver(
                 this, receiver,
-                new IntentFilter(ServiceBroadcastAction.QUALITY_AIR_HUMIDITY_CHANGED),
+                new IntentFilter(ServiceBroadcastAction.QUALITY_AIR_GAS_CHANGED),
                 ContextCompat.RECEIVER_EXPORTED);
         super.onResume();
     }
@@ -93,24 +90,23 @@ public class ActivitySensorHumidity extends AppCompatActivity implements Broadca
     }
 
     private void measure(){
-        int val = Sensors.getHumidity();
+        int val = Sensors.getGas();
         updateMeasure(val);
     }
 
     @Override
     public void broadcastListen(Context context, Intent intent) {
-        if (automatic && ServiceBroadcastAction.QUALITY_AIR_HUMIDITY_CHANGED.equals(intent.getAction())){
+        if (automatic && ServiceBroadcastAction.QUALITY_AIR_GAS_CHANGED.equals(intent.getAction())){
             int val = intent.getIntExtra("data", 0);
             updateMeasure(val);
         }
     }
 
     private void updateMeasure(int val){
-        int i = Algorithm.lower_bound(humidityVals, val);
+        int i = Algorithm.lower_bound(gasVals, val);
         tvVal.setText(String.valueOf(val));
         imgRing.setImageResource(ringIds[i]);
-        tvStatus.setText(getResources().getString(humidityStatusIds[i]));
-        tvDesc.setText(getResources().getString(humidityDescIds[i]));
+        tvStatus.setText(getResources().getString(gasStatusIds[i]));
+        tvDesc.setText(getResources().getString(gasDescIds[i]));
     }
-
 }

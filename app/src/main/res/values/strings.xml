@@ -49,4 +49,20 @@
     <string name="flag_br">Brazilian flag</string>
     <string name="automatic">Automatic</string>
     <string name="flag_uk">United Kingdom flag</string>
+    <string name="sensor_pm10_name">Particle Matter 10</string>
+    <string name="sensor_pm25_name">Particle Matter 2.5</string>
+    <string name="sensor_gas_lpg_name">Gas LPG</string>
+    <string name="sensor_gas_co_name">Gas CO</string>
+    <string name="sensor_gas_smoke_name">Gas Smoke</string>
+    <string name="sensor_dht_tmp_name">DHT Temperature</string>
+    <string name="sensor_dht_humidity_name">DHT Humidity</string>
+    <string name="nan" translatable="false">NaN</string>
+    <string name="sensor_pm10_desc">Particle Matter sensor 10 µg/m³</string>
+    <string name="sensor_pm25_desc">Particle Matter sensor 2.5 µg/m³</string>
+    <string name="sensor_gas_lpg_desc">Gas LPG sensor</string>
+    <string name="sensor_gas_co_desc">Gas CO sensor</string>
+    <string name="sensor_gas_smoke_desc">Gas Smoke sensor</string>
+    <string name="sensor_dht_tmp_desc">Temperature sensor</string>
+    <string name="sensor_dht_humidity_desc">Humidity sensor</string>
+    <string name="measures">Measurements</string>
 </resources>

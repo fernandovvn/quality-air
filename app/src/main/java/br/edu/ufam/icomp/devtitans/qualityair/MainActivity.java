@@ -1,8 +1,10 @@
 package br.edu.ufam.icomp.devtitans.qualityair;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
 
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -12,7 +14,12 @@ import br.edu.ufam.icomp.devtitans.qualityair.service.ServiceMonitoring;
 public class MainActivity extends AppCompatActivity {
 
     private void handleNotificationPermission(){
-        // TODO
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[] {android.Manifest.permission.POST_NOTIFICATIONS}, 1);
+            }
+
+        }
     }
 
     @Override
@@ -24,26 +31,16 @@ public class MainActivity extends AppCompatActivity {
         this.startForegroundService(serviceIntent);
 
         //OnCLick Listeners (Buttons)
-        findViewById(R.id.main_btn_particles).setOnClickListener(this::onClickBtnParticles);
-        findViewById(R.id.main_btn_gas).setOnClickListener(this::onClickBtnGas);
-        findViewById(R.id.main_btn_humidity).setOnClickListener(this::onClickBtnHumidity);
+        findViewById(R.id.main_btn_sensors).setOnClickListener(this::onClickBtnMeasurents);
+//        findViewById(R.id.main_btn_gas).setOnClickListener(this::onClickBtnGas);
+//        findViewById(R.id.main_btn_humidity).setOnClickListener(this::onClickBtnHumidity);
         findViewById(R.id.main_btn_settings).setOnClickListener(this::onClickSettings);
 
         handleNotificationPermission();
     }
 
-    public void onClickBtnParticles(View v){
-        Intent intent = new Intent(this, ActivitySensorParticles.class);
-        startActivity(intent);
-    }
-
-    public void onClickBtnGas(View v){
-        Intent intent = new Intent(this, ActivitySensorGas.class);
-        startActivity(intent);
-    }
-
-    public void onClickBtnHumidity(View v){
-        Intent intent = new Intent(this, ActivitySensorHumidity.class);
+    public void onClickBtnMeasurents(View v){
+        Intent intent = new Intent(this, ActivitySensors.class);
         startActivity(intent);
     }
 
